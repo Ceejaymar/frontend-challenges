@@ -1,0 +1,47 @@
+# Node / package managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+.vite/
+.next/
+out/
+.storybook/
+storybook-static/
+
+# App platforms / hosts
+.vercel/
+.netlify/
+
+# Tests / coverage / e2e
+coverage/
+.nyc_output/
+.cypress/
+.playwright/
+playwright-report/
+
+# Caches / temps
+.cache/
+.tmp/
+*.tsbuildinfo
+
+# Env files (keep examples)
+.env
+.env.*.local
+.env.local
+.env.* 
+!.env.example
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Misc
+*.log
