@@ -1,20 +1,34 @@
-export default function PlanCard({ plan }) {
+import { type Billing, type Plan } from '../types';
+
+type PlanCard = {
+  plan: Plan;
+  billing: Billing;
+};
+
+export default function PlanCard({ plan, billing }: PlanCard) {
+  const monthlyAnnualPrice = (plan.price * (1 - plan.annualDiscount)).toFixed(2);
+  const annualPrice = Math.ceil(plan.price * 12 * (1 - plan.annualDiscount));
+
   return (
     <div className="flex flex-col">
       <h2>{plan.name}</h2>
       <p>{plan.description}</p>
       <div>
-        <span>${plan.price}</span>/month
-        <span>Billed annually (${(plan.price * 12 * (1 - plan.annualDiscount)).toFixed(2)})</span>
+        <span>${billing === 'monthly' ? plan.price : monthlyAnnualPrice}</span>/{billing}
+        {billing === 'monthly' ? (
+          <span> (billed monthly)</span>
+        ) : (
+          <span>Billed annually (${annualPrice})</span>
+        )}
       </div>
-      <div>
+      <ul>
         {plan.features.map((feature) => (
-          <div key={feature}>
+          <li key={feature}>
             <i>✔️</i>
             <span>{feature}</span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <button type="button">Choose Plan</button>
     </div>
   );
