@@ -15,10 +15,10 @@ function App() {
         Pick the plan that suits you today and step up as your demands grow - our flexible options
         have your journey mapped out.
       </p>
-      <div role="radio-group" aria-label="billing period" className="flex gap-4">
+      <div role="radio-group" aria-label="billing period" className="flex gap-6">
         <label
           htmlFor="monthly"
-          className={`px-10 py-2.5 text-neutral-600 font-medium border ${billing === 'monthly' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+          className={`px-11 py-2.5 text-neutral-600 font-medium cursor-pointer select-none border ${billing === 'monthly' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
         >
           <input
             id="monthly"
@@ -33,7 +33,7 @@ function App() {
         </label>
         <label
           htmlFor="annual"
-          className={`px-10 py-2.5 text-neutral-600 font-medium border ${billing === 'annual' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+          className={`px-10 py-2.5 text-neutral-600 font-medium cursor-pointer select-none border ${billing === 'annual' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
         >
           <input
             id="annual"
@@ -48,7 +48,7 @@ function App() {
         </label>
       </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 my-7">
         {planData.map((plan) => {
           return <PlanCard key={plan.name} plan={plan} billing={billing} />;
         })}

@@ -1,5 +1,6 @@
 import { type Billing, type Plan } from '../types';
 import { CheckIcon } from '@phosphor-icons/react';
+import Button from './button';
 
 type PlanCard = {
   plan: Plan;
@@ -14,7 +15,7 @@ export default function PlanCard({ plan, billing }: PlanCard) {
 
   return (
     <div className="flex flex-col p-4 gap-7 rounded-lg shadow-xs border border-solid border-neutral-200">
-      <div>
+      <div className="flex flex-col gap-2">
         <h2 className="text-2xl font-semibold text-neutral-900 capitalize">{plan.name}</h2>
         <p className="text-neutral-600">{plan.description}</p>
       </div>
@@ -35,7 +36,7 @@ export default function PlanCard({ plan, billing }: PlanCard) {
           </li>
         ))}
       </ul>
-      <button type="button">Choose Plan</button>
+      <Button variant={plan.isPopular ? 'popular' : 'primary'}>Buy now</Button>
     </div>
   );
 }
