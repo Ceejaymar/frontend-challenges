@@ -15,7 +15,7 @@ export default function PlanCard({ plan, billing }: PlanCard) {
 
   return (
     <div
-      className={`relative flex flex-col p-4 gap-7 rounded-lg border border-solid ${plan.isPopular ? 'border-indigo-700 shadow-2xl pt-20 md:pt-20' : 'border-neutral-200 shadow-xs'} md:p-8 md:min-h-[532px] lg:flex-1`}
+      className={`relative flex flex-col px-4 pb-4 gap-7 bg-white rounded-lg border border-solid ${plan.isPopular ? 'border-indigo-700 shadow-2xl pt-20' : 'border-neutral-200 shadow-xs pt-4'} md:px-8 md:pb-8 md:min-h-[532px] lg:flex-1`}
     >
       {plan.isPopular && (
         <div className="absolute top-0 left-0 w-full py-4 text-center text-xl text-indigo-700 font-bold bg-indigo-50 rounded-tr-lg rounded-tl-lg">
