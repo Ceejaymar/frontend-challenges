@@ -8,15 +8,18 @@ function App() {
   const [billing, setBilling] = useState<Billing>('monthly');
 
   return (
-    <main className="flex flex-col items-center">
-      <span>Pricing Tiers</span>
-      <span>Fit for all your needs</span>
-      <p className="text-center">
+    <main className="flex flex-col items-center py-12 px-3 gap-5">
+      <span className="text-indigo-700 font-semibold">Pricing Tiers</span>
+      <span className="font-semibold text-3xl text-neutral-900">Fit for all your needs</span>
+      <p className="text-center text-lg text-neutral-600">
         Pick the plan that suits you today and step up as your demands grow - our flexible options
         have your journey mapped out.
       </p>
-      <div role="radio-group" aria-label="billing period">
-        <label htmlFor="monthly">
+      <div role="radio-group" aria-label="billing period" className="flex gap-4">
+        <label
+          htmlFor="monthly"
+          className={`px-10 py-2.5 text-neutral-600 font-medium border ${billing === 'monthly' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+        >
           <input
             id="monthly"
             type="radio"
@@ -28,7 +31,10 @@ function App() {
           />
           Monthly
         </label>
-        <label htmlFor="annual">
+        <label
+          htmlFor="annual"
+          className={`px-10 py-2.5 text-neutral-600 font-medium border ${billing === 'annual' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+        >
           <input
             id="annual"
             type="radio"
@@ -42,7 +48,7 @@ function App() {
         </label>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-8">
         {planData.map((plan) => {
           return <PlanCard key={plan.name} plan={plan} billing={billing} />;
         })}

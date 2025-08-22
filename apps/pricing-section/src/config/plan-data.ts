@@ -1,6 +1,7 @@
 export const planData = [
   {
-    name: 'basic',
+    name: 'basic plan',
+    slug: 'basic',
     description: 'Access to curated selection of abstract images',
     price: 9.99,
     annualDiscount: 0.3,
@@ -8,7 +9,8 @@ export const planData = [
     isPopular: false,
   },
   {
-    name: 'standard',
+    name: 'standard plan',
+    slug: 'standard',
     description: 'Next level integrations, priced economically',
     price: 19.99,
     annualDiscount: 0.2,
@@ -22,7 +24,8 @@ export const planData = [
     isPopular: true,
   },
   {
-    name: 'premium',
+    name: 'premium plan',
+    slug: 'premium',
     description: 'Experience limitless living for power users',
     price: 29.99,
     annualDiscount: 0.1335,
