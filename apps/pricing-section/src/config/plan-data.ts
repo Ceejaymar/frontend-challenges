@@ -16,7 +16,7 @@ export const planData = [
     annualDiscount: 0.2,
     features: [
       'Expanded library with more diverse abstract images',
-      'high-resolution images available',
+      'High-resolution images available',
       'Suitable for commercial use',
       'Priority email support',
       'Advanced analytics',
@@ -34,7 +34,7 @@ export const planData = [
       'Highest quality images, including premium collections',
       'Commercial and resale rights',
       'Dedicated customer support line',
-      '24/hr customer support time',
+      '24/7 support response time',
       'Advanced analytics and insights',
     ],
     isPopular: false,

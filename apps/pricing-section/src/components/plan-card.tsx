@@ -20,7 +20,7 @@ export default function PlanCard({ plan, billing }: PlanCard) {
         <p className="text-neutral-600">{plan.description}</p>
       </div>
       <div className="flex flex-col gap-1">
-        <span className="text-5xl font-semibold ">
+        <span className="text-5xl font-semibold">
           ${billing === 'monthly' ? plan.price : monthlyAnnualPrice}
           <span className="text-base text-neutral-900 font-normal">/month</span>
         </span>
