@@ -8,7 +8,7 @@ function App() {
   const [billing, setBilling] = useState<Billing>('monthly');
 
   return (
-    <main className="flex flex-col items-center py-12 px-3 gap-5 md:gap-7">
+    <main className="flex flex-col items-center mx-auto py-12 px-3 gap-5 max-w-[1440px] md:gap-7">
       <span className="text-indigo-700 font-semibold md:text-xl">Pricing Tiers</span>
       <span className="font-semibold text-3xl text-neutral-900 md:text-5xl">
         Fit for all your needs
@@ -20,7 +20,7 @@ function App() {
       <div role="radio-group" aria-label="billing period" className="flex gap-6">
         <label
           htmlFor="monthly"
-          className={`px-11 py-2.5 text-neutral-600 font-medium cursor-pointer select-none border md:text-lg ${billing === 'monthly' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+          className={`px-11 py-2.5 text-neutral-600 font-medium cursor-pointer select-none duration-200 ease-in border md:text-lg ${billing === 'monthly' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
         >
           <input
             id="monthly"
@@ -35,7 +35,7 @@ function App() {
         </label>
         <label
           htmlFor="annual"
-          className={`px-10 py-2.5 text-neutral-600 font-medium cursor-pointer select-none border md:text-lg ${billing === 'annual' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+          className={`px-10 py-2.5 text-neutral-600 font-medium cursor-pointer select-none duration-200 ease-in border md:text-lg ${billing === 'annual' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
         >
           <input
             id="annual"
