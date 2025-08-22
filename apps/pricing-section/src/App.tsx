@@ -13,7 +13,7 @@ function App() {
       <span className="font-semibold text-3xl text-neutral-900 md:text-5xl">
         Fit for all your needs
       </span>
-      <p className="text-center text-lg text-neutral-600 md:text-xl md:max-w-140">
+      <p className="text-center text-lg text-neutral-600 md:text-xl md:max-w-140 lg:max-w-200">
         Pick the plan that suits you today and step up as your demands grow - our flexible options
         have your journey mapped out.
       </p>
