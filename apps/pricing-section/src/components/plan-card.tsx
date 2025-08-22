@@ -30,7 +30,7 @@ export default function PlanCard({ plan, billing }: PlanCard) {
       </div>
       <div className="flex flex-col gap-1">
         <span
-          className={`text-5xl font-semibold  ${plan.isPopular ? 'text-indigo-700' : 'text-neutral-900'} md:text-6xl lg:text-5xl`}
+          className={`text-5xl font-semibold ${plan.isPopular ? 'text-indigo-700' : 'text-neutral-900'} md:text-6xl lg:text-5xl`}
         >
           ${billing === 'monthly' ? plan.price : monthlyAnnualPrice}
           <span
