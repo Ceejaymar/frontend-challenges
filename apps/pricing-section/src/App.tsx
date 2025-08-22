@@ -1,30 +1,59 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+
+import PlanCard from './components/plan-card';
+import { planData } from './config/plan-data';
+import { type Billing } from './types';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [billing, setBilling] = useState<Billing>('monthly');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="flex flex-col items-center py-12 px-3 gap-5">
+      <span className="text-indigo-700 font-semibold">Pricing Tiers</span>
+      <span className="font-semibold text-3xl text-neutral-900">Fit for all your needs</span>
+      <p className="text-center text-lg text-neutral-600">
+        Pick the plan that suits you today and step up as your demands grow - our flexible options
+        have your journey mapped out.
+      </p>
+      <div role="radio-group" aria-label="billing period" className="flex gap-6">
+        <label
+          htmlFor="monthly"
+          className={`px-11 py-2.5 text-neutral-600 font-medium cursor-pointer select-none border ${billing === 'monthly' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+        >
+          <input
+            id="monthly"
+            type="radio"
+            name="billing"
+            value="monthly"
+            checked={billing === 'monthly'}
+            onChange={() => setBilling('monthly')}
+            className="sr-only"
+          />
+          Monthly
+        </label>
+        <label
+          htmlFor="annual"
+          className={`px-10 py-2.5 text-neutral-600 font-medium cursor-pointer select-none border ${billing === 'annual' ? 'rounded border-solid border-neutral-200 text-neutral-900 shadow-sm' : 'border-transparent'}`}
+        >
+          <input
+            id="annual"
+            type="radio"
+            name="billing"
+            value="annual"
+            checked={billing === 'annual'}
+            onChange={() => setBilling('annual')}
+            className="sr-only"
+          />
+          Annually
+        </label>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      <div className="flex flex-col gap-8 my-7">
+        {planData.map((plan) => {
+          return <PlanCard key={plan.name} plan={plan} billing={billing} />;
+        })}
       </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-    </>
+    </main>
   );
 }
 
